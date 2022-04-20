@@ -8,26 +8,14 @@ public class takebox : MonoBehaviour
 
     private void OnCollisionEnter(Collision Collision)
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (Collision.gameObject.tag == "Player")
             {
+                Debug.Log("123");
                 transform.parent = Collision.transform;
             }
         }
     }
-    private void OnCollisionExit(Collision Collision)
-    {
-        if !(Input.GetKeyDown(KeyCode.LeftShift))  
-        {
-
-            if (Collision.gameObject.tag == "Player")
-            {
-                transform.parent = null;
-            }
-        }
-    }
-
-
-
 }
